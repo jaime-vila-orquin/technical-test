@@ -1,0 +1,45 @@
+<div>
+  <nz-layout>
+    <nz-sider nzTheme="light" nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null" [nzCollapsedWidth]="85">
+      <div class="logo" *ngIf="!isCollapsed else miniLogo">
+        <span class="logo-color">World</span><span class="logo-color-white">2Meet</span>
+      </div>
+      <ng-template #miniLogo>
+        <div class="mini-logo">
+          <span class="logo-color">w</span><span class="logo-color-white">2m</span>
+        </div>
+      </ng-template>
+      <ul nz-menu nzMode="inline">
+        <li nz-menu-item [nzSelected]="true" [routerLink]="['home']">
+          <i nz-icon nzType="home" nzTheme="outline"></i>
+          <span class="option-menu-name">{{"menu.inicio" | transloco}}</span>
+        </li>
+        <li nz-menu-item [routerLink]="['heroes']">
+          <i nz-icon nzType="thunderbolt" nzTheme="outline"></i>
+          <span class="option-menu-name">{{"menu.heroes" | transloco}}</span>
+        </li>
+        <li nz-menu-item [routerLink]="['advanced-search']">
+          <i nz-icon nzType="search" nzTheme="outline"></i>
+          <span class="option-menu-name">{{"menu.buscador" | transloco}}</span>
+        </li>
+      </ul>
+    </nz-sider>
+
+    <nz-layout>
+      <nz-header>
+        <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+          (click)="isCollapsed = !isCollapsed"></i>
+        <div class="lang">
+          <nz-select [ngModel]="langDefault" [nzOptions]="listOfLanguages" (ngModelChange)="onChange($event)">
+          </nz-select>
+        </div>
+      </nz-header>
+
+      <nz-content>
+        <div class="inner-content">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+</div>

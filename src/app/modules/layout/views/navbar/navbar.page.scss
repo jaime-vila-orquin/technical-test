@@ -1,0 +1,175 @@
+@import "../../../../../variables.scss";
+
+//LOGO
+
+.logo {
+  height: 6.78vh;
+  font-size: 2.1em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-logo {
+  height: 6.78vh;
+  font-size: 1.7em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.logo-color{
+  color: $secondary-color;
+}
+
+.logo-color-white{
+  color: #fff;
+}
+
+// BARRA HORIZONTAL Y VERTICAL DEL MENU
+nz-header {
+  background: $primary-color;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.trigger {
+  font-size: 1.6em;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: #fff;
+}
+
+.trigger:hover {
+  color: $secondary-color !important;
+}
+
+nz-sider{
+  background: $primary-color;
+  padding: 0;
+  margin: 0;
+}
+
+.ant-layout-sider .ant-layout-sider-light .ant-layout-sider-collapsed{
+  width: 20vh !important;
+}
+
+.ant-layout {
+  height: 100vh;
+  overflow: auto;
+}
+
+.ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+  border-right: none
+}
+
+// CONTENT
+nz-content {
+  margin: 0 0px;
+  background: #fff;
+}
+
+.inner-content {
+  padding-top: 14px;
+  padding-bottom: 1px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background: #fff;
+  min-height: 360px;
+}
+
+//FOOTER
+nz-footer {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+// MENU NAVBAR
+//>Language
+.lang{
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  margin-right: 2vh;
+}
+
+.lang nz-select{
+  width: 10vh;
+}
+
+.option-menu-name{
+  font-size: 2.1ex;
+}
+
+//Color del margen de la opción del menu seleccionado
+.ant-menu {
+  background: rgba(0, 0, 0, 0.192);
+}
+
+// Margenes de la opción de menu seleccionado
+.ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item, .ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title, .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-submenu-title, .ant-menu-inline .ant-menu-submenu-title {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+// Tamaño letras menus
+.ant-menu > * {
+  font-size: 2.2ex;
+  border-bottom: 1px solid linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(30,250,0,1) 49%, rgba(4,0,255,1) 100%);
+}
+
+// Color del texto al pasar el raton por una opcion del menu sin submenu
+.ant-menu-item:hover {
+  color: $secondary-color;
+}
+
+// Opción del menú
+.ant-menu-item {
+  color: rgb(230, 230, 230);
+  border-bottom: 1px solid $primary-color;
+  border-right: 1px solid $primary-color;
+}
+
+// Opción del menú seleccionada
+.ant-menu-item-selected {
+  border:none !important;
+  border-right: 4.5px solid $secondary-color !important;
+  background-color: $primary-color !important;
+  font-weight: bold;
+  color: $secondary-color;
+}
+
+// Color del borde derecho de la opcion seleccionada
+vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
+  border-right: 5px solid $secondary-color !important;
+}
+
+
+// RESPONSIVE
+@media only screen and (max-width: 1280px) and ( min-height: 577.3px ) {
+  .logo {
+    height: 10.8vh;
+    font-size: 2.1em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mini-logo {
+    height: 10.8vh;
+    font-size: 1.7em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+

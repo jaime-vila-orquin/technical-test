@@ -1,0 +1,19 @@
+{
+  "name": "mocked-api",
+  "version": "1.0.0",
+  "description": "Heroes API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "json:server": "json-server db.json"
+  },
+  "keywords": [
+    "mocked",
+    "api"
+  ],
+  "author": "Jaime Vila Orquín",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "^0.17.1"
+  }
+}

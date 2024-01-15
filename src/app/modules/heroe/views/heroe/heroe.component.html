@@ -1,0 +1,200 @@
+<div class="heroe-view">
+  <app-search *ngIf="isLoaded" (search)="searchHeroes($event)" [listOfDataRegisters]="listOfDataRegisters"></app-search>
+
+  <div class="table-operations-button">
+    <button nz-button nzSize="large" class="table-operations-buttons btn-primary" (click)="openModal(false)">
+      <i nz-icon nzType="plus"></i>
+      <span>{{ "heroe.nuevo_heroe" | transloco }}</span>
+
+    </button>
+
+    <!-- <button nz-button nzSize="large" class="table-operations-buttons" (click)="forceFile()">Forzar Proceso</button> -->
+  </div>
+
+  <nz-table #filterTable [nzData]="listOfDataRegisters" nzTableLayout="fixed" [nzPageSize]="5">
+    <!-- nzShowSizeChanger
+    [nzPageSizeOptions]="[5, 10, 15]" -->
+    <thead>
+      <tr>
+        <th *ngFor="let column of listOfColumns; trackBy: trackByName" [nzSortOrder]="column.sortOrder"
+          [nzSortFn]="column.sortFn" [nzSortDirections]="column.sortDirections">
+          {{ column.name }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of filterTable.data">
+        <td>{{ data.name | uppercase }}</td>
+        <td>{{ data.birth | date: "dd/MM/yyyy" }}</td>
+        <td>{{ data.height }}cm</td>
+        <td>{{ data.weight }}Kg</td>
+        <td>{{ data.actor }}</td>
+        <td>{{ data.dateRegister | date: "dd/MM/yyyy" }}</td>
+        <td>
+          <button nz-button>
+            <i nz-icon nzType="edit" (click)="openModal(true, data)"></i>
+          </button>
+          <button class="delete-btn" nz-button>
+            <i nz-icon nzType="delete" (click)="deleteConfirm(data.id)"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
+
+<!-- MODAL -->
+<nz-modal nzWidth="100vh" [(nzVisible)]="isVisibleModal" [nzTitle]="edit ? 'DETALLE DEL HÉROE' : 'NUEVO HÉROE'"
+  (nzOnCancel)="handleCancel()">
+  <div *nzModalContent>
+    <form nz-form nzLayout="vertical" [formGroup]="modalForm" (ngSubmit)="handleOk()">
+      <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+        <div nz-col class="gutter-row" [nzSpan]="8">
+          <div class="inner-box">
+            <nz-form-item>
+              <nz-form-label>{{ "heroe.modal.fecha_alta" | transloco }}:</nz-form-label>
+              <nz-form-control>
+                <nz-date-picker formControlName="dateRegister" [nzFormat]="'dd-MM-YYYY'"
+                  [nzDisabled]="true"></nz-date-picker>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-col class="gutter-row" [nzSpan]="8">
+          <div class="inner-box">
+            <nz-form-item>
+              <nz-form-label class="requerido">{{ "heroe.modal.nombre" | transloco }}:</nz-form-label>
+              <nz-form-control>
+                <input nz-input id="name" name="name" formControlName="name" class="heroe-name-input" [ngClass]="{
+                    'is-invalid ng-invalid ng-dirty':
+                      !f['name'].valid && (f['name'].dirty || f['name'].touched)
+                  }" />
+                <span *ngIf="
+                    f['name'].errors &&
+                    f['name'].invalid &&
+                    (f['name'].dirty || f['name'].touched)
+                  " class="invalid-feedback">
+                  <small *ngIf="f['name'].hasError('required')">
+                    Este campo es requerido.
+                  </small>
+                </span>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-col class="gutter-row" [nzSpan]="8">
+          <div class="inner-box">
+            <nz-form-item>
+              <nz-form-label class="requerido">{{
+                "heroe.modal.fecha_nacimiento" | transloco
+                }}:</nz-form-label>
+              <nz-form-control>
+                <nz-date-picker formControlName="birth" [nzFormat]="'dd-MM-YYYY'" [ngClass]="{
+                    'is-invalid ng-invalid ng-dirty':
+                      !f['birth'].valid &&
+                      (f['birth'].dirty || f['birth'].touched)
+                  }">
+                </nz-date-picker>
+                <span *ngIf="
+                    f['birth'].errors &&
+                    f['birth'].invalid &&
+                    (f['birth'].dirty || f['birth'].touched)
+                  " class="invalid-feedback">
+                  <small *ngIf="f['birth'].errors['required']">
+                    Este campo es requerido.
+                  </small>
+                </span>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+      </div>
+      <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+        <div nz-col class="gutter-row" [nzSpan]="8">
+          <div class="inner-box">
+            <nz-form-item>
+              <nz-form-label class="requerido">{{ "heroe.modal.actor" | transloco }}:</nz-form-label>
+              <nz-form-control>
+                <input nz-input id="actor" name="actor" formControlName="actor" [ngClass]="{
+                    'is-invalid ng-invalid ng-dirty':
+                      !f['actor'].valid &&
+                      (f['actor'].dirty || f['actor'].touched)
+                  }" />
+                <span *ngIf="
+                    f['actor'].errors &&
+                    f['actor'].invalid &&
+                    (f['actor'].dirty || f['actor'].touched)
+                  " class="invalid-feedback">
+                  <small *ngIf="f['actor'].errors['required']">
+                    Este campo es requerido.
+                  </small>
+                </span>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-col class="gutter-row" [nzSpan]="8">
+          <div class="inner-box">
+            <nz-form-item>
+              <nz-form-label class="requerido">{{ "heroe.modal.altura" | transloco }}:</nz-form-label>
+              <nz-form-control>
+                <nz-input-number [nzPlaceHolder]="'Ej: 192 = 192cm'" [nzMax]="500" [nzMin]="0" formControlName="height"
+                  class="input-number" [ngClass]="{
+                    'is-invalid ng-invalid ng-dirty':
+                      !f['height'].valid &&
+                      (f['height'].dirty || f['height'].touched)
+                  }"></nz-input-number>
+                <span *ngIf="
+                    f['height'].errors &&
+                    f['height'].invalid &&
+                    (f['height'].dirty || f['height'].touched)
+                  " class="invalid-feedback">
+                  <small *ngIf="f['height'].errors['required']">
+                    Este campo es requerido. Recuerda, en centímetros: (Ej: 192
+                    = 192cm)
+                  </small>
+                </span>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-col class="gutter-row" [nzSpan]="8">
+          <div class="inner-box">
+            <nz-form-item>
+              <nz-form-label class="requerido">{{ "heroe.modal.peso" | transloco }}:</nz-form-label>
+              <nz-form-control>
+                <nz-input-number [nzPlaceHolder]="'Ej: 80 = 80Kg'" [nzMax]="300" [nzMin]="0" formControlName="weight"
+                  class="input-number" [ngClass]="{
+                    'is-invalid ng-invalid ng-dirty':
+                      !f['weight'].valid &&
+                      (f['weight'].dirty || f['weight'].touched)
+                  }"></nz-input-number>
+                <span *ngIf="
+                    f['weight'].errors &&
+                    f['weight'].invalid &&
+                    (f['weight'].dirty || f['weight'].touched)
+                  " class="invalid-feedback">
+                  <small *ngIf="f['weight'].hasError('required')">
+                    Este campo es requerido. Recuerda: (Ej: 80 = 80Kg)
+                  </small>
+                </span>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div *nzModalFooter>
+    <button type="submit" class="btn-primary" nz-button (click)="handleOk()" [nzLoading]="isConfirmLoading">
+      {{
+      edit
+      ? ("heroe.modal.actualizar" | transloco)
+      : ("heroe.modal.anyadir" | transloco)
+      }}
+    </button>
+    <button class="btn-cancel" id="btn-cancel" nz-button nzType="default" (click)="handleCancel()">
+      {{ "heroe.modal.cancelar" | transloco }}
+    </button>
+  </div>
+</nz-modal>

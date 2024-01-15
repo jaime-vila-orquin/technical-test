@@ -1,0 +1,192 @@
+@import "variables";
+
+/* You can add global styles to this file, and also import other style files */
+.leftCell{
+  display: flex;
+  justify-content: left;
+}
+
+.rightCell{
+  display: flex;
+  justify-content: right;
+}
+
+.centredCell{
+  display: flex;
+  justify-content: center;
+}
+
+//BUTTONS
+.btn-primary{
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: white;
+}
+.ant-btn:hover, .btn-primary:hover{
+  color: $secondary-color;
+  border-color: $secondary-color;
+}
+.ant-btn:focus {
+  color: $secondary-color;
+  border-color: $secondary-color;
+  background: #fff;
+}
+.btn-cancel{
+  color: inherit;
+}
+.btn-cancel:hover{
+  color: $secondary-color;
+  border-color: $secondary-color;
+}
+.delete-btn:hover{
+  background-color: rgb(163, 45, 45);
+  color: $secondary-color;
+  border-color: $secondary-color;
+}
+
+//INPUTS
+.ant-input:hover, .ant-input:focus, .ant-input-focused{
+  border-color: $secondary-color;
+}
+
+//DATEPICKERS
+.ant-picker:hover, .ant-picker:focus{
+  border-color: $secondary-color;
+}
+
+nz-date-picker{
+  width: 100%;
+}
+
+
+//TABLE
+//table>pagination
+.ant-select:not(.ant-select-customize-input) .ant-select-selector:hover{
+  border-color: $secondary-color;
+  color: $secondary-color;
+}
+
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector{
+  border-color: $secondary-color;
+}
+
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled){
+  background-color: #bfcb3b83;
+}
+
+.ant-select:hover{
+  border-color: $secondary-color;
+}
+
+.ant-select-arrow:hover{
+  color: $secondary-color;
+  border-color: $secondary-color;
+}
+
+.ant-pagination-prev .ant-pagination-item-link:hover, .ant-pagination-next .ant-pagination-item-link:hover {
+  border-color: $secondary-color;
+  color: $secondary-color;
+}
+
+.ant-pagination-item:hover {
+  border-color: $secondary-color;
+}
+
+.ant-pagination-item a:hover {
+  color: $secondary-color;
+}
+
+.ant-pagination-item-active {
+  border-color: $secondary-color;
+}
+
+.ant-pagination-item-active:hover {
+  border-color: $secondary-color;
+}
+.ant-pagination-item-active a:hover{
+  color: $secondary-color;
+}
+
+.ant-pagination-item-active a {
+  color: $primary-color !important;
+}
+.ant-pagination-item-active {
+  font-weight: 500;
+  background: #fff;
+  border-color: $primary-color !important;
+}
+.ant-pagination-item-active a:hover , .ant-pagination-item-active:hover {
+  border-color: $secondary-color !important;
+  color: $secondary-color !important;
+}
+
+.ant-table-thead th.ant-table-column-has-sorters{
+  background-color: $primary-color;
+  color: #fff;
+  border-right: 1px solid;
+  border-left: 1px solid;
+}
+.ant-table-thead th.ant-table-column-has-sorters:hover, .ant-table-thead th.ant-table-column-has-sorters>*:hover{
+  color: $secondary-color;
+  background-color: $primary-color;
+  border-color: $secondary-color;
+}
+.ant-table-thead > tr > th{
+  text-align: center;
+  background-color: $primary-color;
+  color: #fff;
+  border-right: 1px solid;
+  border-left: 1px solid;
+}
+.ant-table-thead > tr > th:hover{
+  color: $secondary-color;
+  background-color: $primary-color;
+  border-color: $secondary-color;
+}
+// table> content
+.ant-table-tbody > tr > td{
+  text-align: center;
+}
+//table>footer
+.ant-table-footer{
+  background-color: $primary-color;
+  color: #fff;
+  padding: 8px;
+}
+
+// COLLAPSIBLE
+.ant-collapse > .ant-collapse-item:last-child, .ant-collapse > .ant-collapse-item:last-child > .ant-collapse-header{
+  background: $primary-color;
+  color:#fff;
+  border-right: 1px solid $primary-color;
+  border-left: 1px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+  border-radius: 2px;
+}
+.ant-collapse > .ant-collapse-item:last-child:hover, .ant-collapse > .ant-collapse-item:last-child:hover > .ant-collapse-header:hover{
+  color:$secondary-color;
+}
+
+// COLLAPSIBLE> FILTROS
+.search-collapsible{
+  margin-bottom: 7.6vh;
+}
+
+.filters{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+// FORM & FORM ERRORS
+.requerido:after {
+  content: " *" !important;
+  color: red !important;
+}
+
+.invalid-feedback{
+  color: rgb(212, 9, 9);
+  font-size: 500;
+  font-style: italic;
+}

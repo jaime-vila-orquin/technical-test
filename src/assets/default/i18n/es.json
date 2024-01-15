@@ -1,0 +1,46 @@
+{
+  "general": {
+    "busqueda_avanzada": "Búsqueda Avanzada"
+  },
+  "menu":{
+    "inicio": "Inicio",
+    "heroes": "Héroes",
+    "buscador": "Buscador"
+  },
+  "heroe": {
+      "buscar_heroes_por_nombre_o_actor": "Buscar héroes por nombre o actor...",
+      "nuevo_heroe": "Nuevo Héroe",
+      "heroes_cargados": "héroes cargados",
+      "modal":{
+        "nuevo_heroe":"Nuevo Héroe",
+        "detalle_heroe": "Detalle del Héroe",
+        "fecha_alta": "Fecha Alta",
+        "nombre": "Nombre",
+        "fecha_nacimiento": "Fecha Nacimiento",
+        "actor": "Actor",
+        "altura": "Altura",
+        "peso": "Peso",
+        "anyadir": "Añadir",
+        "actualizar": "Actualizar",
+        "cancelar": "Cancelar"
+      },
+      "confirmModal":{
+        "titulo": "¿Seguro que quieres borrar este héroe?",
+        "okText": "Sí, seguro",
+        "noOkText": "Cancelar"
+      },
+      "cabeceras":{
+        "nombre": "NOMBRE",
+        "nacimiento": "NACIMIENTO",
+        "altura": "ALTURA",
+        "peso": "PESO",
+        "actor": "ACTOR",
+        "fecha_alta": "FECHA ALTA",
+        "accion": "ACCION"
+      }
+  },
+  "buscador":{
+    "buscar_por_nombre_de_heroe_actor_altura_o_peso": "Buscar por nombre de héroe, actor, altura o peso. (Ej: chris)",
+    "buscador": "Buscador"
+  }
+}

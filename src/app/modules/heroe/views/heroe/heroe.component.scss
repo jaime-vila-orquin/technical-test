@@ -1,0 +1,27 @@
+//TABLA
+.table-operations {
+  margin-bottom: 2vh;
+}
+
+.table-operations-input{
+  display: flex;
+  justify-content: flex-start;
+}
+.table-operations-input input{
+  width: 100%;
+  border-radius: 3px;
+}
+
+.table-operations-button{
+  margin-bottom: 2vh;
+  border-radius: 3px;
+}
+
+//MODAL
+.heroe-name-input{
+  text-transform: uppercase;
+}
+
+.input-number{
+  width: 100% !important;
+}

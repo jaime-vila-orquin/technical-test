@@ -1,0 +1,45 @@
+{
+  "general": {
+    "busqueda_avanzada": "Advanced Search"
+  },
+  "menu":{
+    "inicio": "Home",
+    "heroes": "Heroes",
+    "buscador": "Advanced Search"
+  },
+  "heroe": {
+      "buscar_heroes_por_nombre_o_actor": "Search by hero or actor...",
+      "nuevo_heroe": "New Hero",
+      "heroes_cargados": "loaded heros",
+      "modal":{
+        "nuevo_heroe":"New Hero",
+        "detalle_heroe": "Hero Details",
+        "fecha_alta": "Date Register",
+        "nombre": "Name",
+        "fecha_nacimiento": "Birthday",
+        "actor": "Actor",
+        "altura": "Height",
+        "peso": "Weight",
+        "anyadir": "Add",
+        "actualizar": "Update",
+        "cancelar": "Cancel"
+      },
+      "confirmModal":{
+        "titulo": "Are you sure delete this hero?",
+        "okText": "Yes, sure",
+        "noOkText": "Cancel"
+      },
+      "cabeceras":{
+        "nombre": "NAME",
+        "nacimiento": "BIRTHDAY",
+        "altura": "HEIGHT",
+        "peso": "WEIGHT",
+        "actor": "ACTOR",
+        "fecha_alta": "DATE REGISTER",
+        "accion": "ACTION"
+      }
+  },
+  "buscador":{
+    "buscador": "Search"
+  }
+}

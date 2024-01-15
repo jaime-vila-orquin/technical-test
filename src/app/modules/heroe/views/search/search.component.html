@@ -1,0 +1,9 @@
+<!-- SEARCH -->
+<div class="table-operations">
+  <form [formGroup]="searchForm">
+    <div class="table-operations-input">
+      <input type="text" nz-input placeholder="{{ 'heroe.buscar_heroes_por_nombre_o_actor' | transloco }}"
+        formControlName="searchValue" (keyup)="searchHeroes()" nzSize="large" />
+    </div>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+.align-card-grid{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture{
+  background-image: url(~/src/assets/default/images/w2m.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  height: 80vh;
+  margin: 0 0vh;
+}

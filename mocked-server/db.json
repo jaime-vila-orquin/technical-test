@@ -1,0 +1,113 @@
+{
+  "heroes": [
+    {
+      "name": "superman",
+      "birth": "1972-01-04T14:09:29.668Z",
+      "height": "192",
+      "weight": "90",
+      "actor": "Henry Cavill",
+      "dateRegister": "2024-01-13T14:09:29.668Z",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Batman",
+      "birth": "1969-07-02T14:09:29.668Z",
+      "height": "189",
+      "weight": "91",
+      "actor": "Adam West",
+      "dateRegister": "2024-01-13T14:09:29.668Z"
+    },
+    {
+      "id": 3,
+      "name": "Capitán América",
+      "birth": "1932-12-01T14:09:29.668Z",
+      "height": "192 ",
+      "weight": "95 ",
+      "actor": "Chris Evans",
+      "dateRegister": "2024-01-13T14:09:29.668Z"
+    },
+    {
+      "id": 4,
+      "name": "Hulk",
+      "birth": "1976-05-28T14:09:29.668Z",
+      "height": "242",
+      "weight": "170",
+      "actor": "Mark Ruffalo",
+      "dateRegister": "2024-01-13T14:09:29.668Z"
+    },
+    {
+      "id": 5,
+      "name": "Thor",
+      "birth": "1972-10-14T14:09:29.668Z",
+      "height": "196",
+      "weight": "94 ",
+      "actor": "Chris Hemsworth",
+      "dateRegister": "2024-01-13T14:09:29.668Z"
+    },
+    {
+      "id": 6,
+      "name": "Dr Strange",
+      "birth": "1972-01-01T14:09:29.668Z",
+      "height": "186",
+      "weight": "82",
+      "actor": "Benedict Cumberbatch",
+      "dateRegister": "2024-01-13T14:09:29.668Z"
+    },
+    {
+      "id": 7,
+      "name": "Star Lord",
+      "birth": "1972-07-05T14:09:29.668Z",
+      "height": "188",
+      "weight": "89",
+      "actor": "Chris Pratt",
+      "dateRegister": "2024-01-13T14:09:29.668Z"
+    },
+    {
+      "id": 8,
+      "name": "Thanos",
+      "birth": "1979-01-08T14:09:29.668Z",
+      "height": "216",
+      "weight": "103",
+      "actor": "Josh Brolin",
+      "dateRegister": "2024-01-13T14:09:29.668Z"
+    },
+    {
+      "id": 9,
+      "name": "Spider Man",
+      "birth": "1990-12-31T14:09:29.668Z",
+      "height": "186",
+      "weight": "82",
+      "actor": "Tom Holland",
+      "dateRegister": "2024-01-13T14:09:29.668Z"
+    },
+    {
+      "id": 9,
+      "name": "Aquaman",
+      "birth": "1989-08-01T14:09:29.668Z",
+      "height": "190",
+      "weight": "90",
+      "actor": "Jason Momoa",
+      "dateRegister": "2024-01-13T14:09:29.668Z"
+    },
+    {
+      "name": "JOKER",
+      "birth": "1979-08-08T13:25:06.245Z",
+      "height": 186,
+      "weight": 79,
+      "actor": "Joaquin Phoenix",
+      "dateRegister": "2024-01-13T14:24:56.772Z",
+      "id": 10
+    }
+  ],
+  "languages": [
+    {
+      "lang": "es",
+      "labelRecurso": "Es (ES)"
+    },
+    {
+      "lang": "en",
+      "labelRecurso": "En (EN)"
+    }
+  ]
+}

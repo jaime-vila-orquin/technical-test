@@ -1,0 +1,75 @@
+<div class="search-collapsible">
+  <nz-collapse>
+    <nz-collapse-panel #p *ngFor="let panel of panels; let isFirst = first"
+      nzHeader="{{ 'general.busqueda_avanzada' | transloco | uppercase }}" [nzActive]="panel.active"
+      [nzExpandedIcon]="!isFirst ? panel.icon || expandedIcon : undefined">
+      <form nz-form nzLayout="vertical" [formGroup]="searchForm" (ngSubmit)="advancedSearch()">
+
+        <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+          <div nz-col class="gutter-row" [nzSpan]="12">
+            <div class="inner-box">
+              <nz-form-item>
+                <nz-form-label class="requerido">{{ "buscador.buscador" | transloco }}:</nz-form-label>
+                <nz-form-control>
+                  <input nz-input id="name" name="name" placeholder="{{
+                      'buscador.buscar_por_nombre_de_heroe_actor_altura_o_peso'
+                        | transloco
+                    }}" formControlName="name" [ngClass]="{
+                      'is-invalid ng-invalid ng-dirty':
+                        !f['name'].valid &&
+                        (f['name'].dirty || f['name'].touched)
+                    }" />
+                  <span *ngIf="
+                      f['name'].errors &&
+                      f['name'].invalid &&
+                      (f['name'].dirty || f['name'].touched)
+                    " class="invalid-feedback">
+                    <small *ngIf="f['name'].hasError('required')">
+                      Este campo es requerido.
+                    </small>
+                  </span>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+          <div nz-col class="gutter-row advanced-search-form" [nzSpan]="12">
+            <div class="inner-box">
+              <nz-form-control>
+                <button class="btn-primary" nz-button nzSize="large" (click)="advancedSearch()">
+                  {{ "general.busqueda_avanzada" | transloco }}
+                </button>
+              </nz-form-control>
+            </div>
+          </div>
+        </div>
+      </form>
+      <ng-template #expandedIcon let-active>
+        {{ active }}
+        <i nz-icon nzType="caret-right" class="ant-collapse-arrow" [nzRotate]="p.nzActive ? 90 : -90"></i>
+      </ng-template>
+    </nz-collapse-panel>
+  </nz-collapse>
+</div>
+
+<div class="buscador-view" *ngIf="listOfDataRegisters">
+  <nz-table #filterTable [nzData]="listOfDataRegisters" nzTableLayout="fixed" [nzPageSize]="10">
+    <thead>
+      <tr>
+        <th *ngFor="let column of listOfColumns; trackBy: trackByName" [nzSortOrder]="column.sortOrder"
+          [nzSortFn]="column.sortFn" [nzSortDirections]="column.sortDirections">
+          {{ column.name }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of filterTable.data">
+        <td>{{ data.name | uppercase }}</td>
+        <td>{{ data.birth | date: "dd/MM/yyyy" }}</td>
+        <td>{{ data.height }}cm</td>
+        <td>{{ data.weight }}Kg</td>
+        <td>{{ data.actor }}</td>
+        <td>{{ data.dateRegister | date: "dd/MM/yyyy" }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
